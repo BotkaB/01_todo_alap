@@ -4,8 +4,10 @@ export default class TablazatMegjelenit {
     #lista = [];
     constructor(lista, szuloElem) {
         console.log(lista)
+        
         this.#lista = lista;
         this.szuloElem = szuloElem;
+        this.szuloElem.empty();
         this.tablazatKiir();
         this.tbodyElem = $(".sorok")
         this.sorokLetrehozasa()

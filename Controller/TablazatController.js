@@ -7,7 +7,7 @@ export default class TablazatController{
         this.tModel=new TablazatModel();
         const lista=this.tModel.getList();
        
-        this. tMegjelenit=new TablazatMegjelenit(lista,$(".tarolo"))
+        this.tMegjelenit=new TablazatMegjelenit(lista,$(".tarolo"))
         this.torlesEsemeny()
     }
 
@@ -16,6 +16,14 @@ export default class TablazatController{
 
         console.log(event.detail)
         let index=event.detail.id
+
+        this.tModel.torles(index)
+
+        const lista=this.tModel.getList()
+        this. tMegjelenit=new TablazatMegjelenit(lista,$(".tarolo"))
+
+        //át kell adni a modelnek az indexet, a modelnek törölnie kell a listából az elemet
+        // utána le kell kérdezni az adatokat újra meg kell jeleníteni
     })
     }
 }
