@@ -11,7 +11,8 @@ export default class TablazatMegjelenit {
         this.sorokLetrehozasa()
     }
 
-    sorokLetrehozasa() {this.#lista.forEach(elem=>{
+    sorokLetrehozasa() {this.#lista.forEach((elem,index)=>{
+        elem.id=index
         new Sor(elem, this.tbodyElem)
     })
 

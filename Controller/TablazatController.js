@@ -8,5 +8,15 @@ export default class TablazatController{
         const lista=this.tModel.getList();
        
         this. tMegjelenit=new TablazatMegjelenit(lista,$(".tarolo"))
+        this.torlesEsemeny()
     }
+
+    torlesEsemeny(){
+        $(window).on("torles", (event)=>{
+
+        console.log(event.detail)
+        let index=event.detail.id
+    })
     }
+}
+    
